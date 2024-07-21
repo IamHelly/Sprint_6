@@ -10,5 +10,6 @@ class TestsDzenPage:
     def test_go_to_dzen_page(self, driver):
         dzen_page = DzenPage(driver, Urls.base_url)
         dzen_page.open_page()
-        current_url = dzen_page.switch_to_dzen_page()
+        dzen_page.switch_to_dzen_page()
+        current_url = dzen_page.get_page_url()
         assert current_url == Urls.dzen_page

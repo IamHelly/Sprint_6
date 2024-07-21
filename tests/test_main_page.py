@@ -22,6 +22,8 @@ class TestQuestions:
     def test_check_questions_get_answers(self, driver, number, answer):
         main_page = MainPage(driver, Urls.base_url)
         main_page.open_page()
+        main_page.accept_cookies()
+        main_page.open_question(number)
         text = main_page.get_answer_text(number)
         assert text == answer
 
